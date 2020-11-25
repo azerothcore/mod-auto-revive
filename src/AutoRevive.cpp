@@ -57,7 +57,7 @@ class AutoRevive_WorldSC : public WorldScript
 public:
     AutoRevive_WorldSC() : WorldScript("AutoRevive_WorldSC") {}
 
-	void OnAfterConfigLoad(bool reload )
+	void OnAfterConfigLoad(bool reload)
 	{
         if (!reload) {
             std::string conf_path = _CONF_DIR;
