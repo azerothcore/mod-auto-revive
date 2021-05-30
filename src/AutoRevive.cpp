@@ -52,36 +52,7 @@ public:
 	}
 };
 
-class AutoRevive_WorldSC : public WorldScript
-{
-public:
-    AutoRevive_WorldSC() : WorldScript("AutoRevive_WorldSC") {}
-
-	void OnAfterConfigLoad(bool reload)
-	{
-        if (!reload) {
-            std::string conf_path = _CONF_DIR;
-            std::string cfg_file = conf_path + "/AutoRevive.conf";
-        
-            std::string cfg_def_file = cfg_file +".dist";
-            sConfigMgr->LoadMore(cfg_def_file.c_str());
-            
-            sConfigMgr->LoadMore(cfg_file.c_str());
-
-            if (!sConfigMgr->LoadMore(cfg_file.c_str()))
-            {
-                sLog->outString();
-                sLog->outError("Config: Invalid or missing configuration file : %s", cfg_file.c_str());
-                sLog->outError("Config: Verify that the file exists and has \'[worldserver]' written in the top of the file!");
-                sLog->outError("Config: Use default settings!");
-                sLog->outString();
-            }
-        }
-	}
-};
-
 void AddAutoReviveScripts()
 {
-    new AutoRevive_PlayerSC();
-	new AutoRevive_WorldSC();
+  new AutoRevive_PlayerSC();
 }
