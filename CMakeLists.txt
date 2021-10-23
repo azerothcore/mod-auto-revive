@@ -1,6 +1,0 @@
-# Set current dir
-CU_SET_PATH("CUR_DIR_MODULE_AUTO_REVIVE" "${CMAKE_CURRENT_LIST_DIR}")
-
-AC_ADD_SCRIPT("${CMAKE_CURRENT_LIST_DIR}/src/AutoRevive.cpp")
-AC_ADD_SCRIPT_LOADER("AutoRevive" "${CMAKE_CURRENT_LIST_DIR}/src/loader.h")
-AC_ADD_CONFIG_FILE("${CMAKE_CURRENT_LIST_DIR}/conf/AutoRevive.conf.dist")
